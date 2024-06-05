@@ -16,6 +16,7 @@ int main()
 
 	do
 	{
+		// Menú
 		cout << "1) Mover" << endl;
 		cout << "2) Ver" << endl;
 		cout << "3) Segmento" << endl;
@@ -26,6 +27,7 @@ int main()
 		{
 		case 1:
 		{
+			// Mover
 			cout << "ingrese x" << endl;
 			cin >> x;
 			cout << "ingrese y" << endl;
@@ -35,23 +37,27 @@ int main()
 		}
 		case 2:
 		{
+			// Ver
 			C = Co[0]->toString();
 			while (*C)
 			{
 				cout << *C++;
 			}
 			cout << endl;
-
 			break;
 		}
 		case 3:
 		{
+			// Segmento
+			// primer punto
 			cout << "Primer Punto:" << endl;
 			cout << "ingrese x" << endl;
 			cin >> x;
 			cout << "ingrese y" << endl;
 			cin >> y;
 			Co[1]->Mover(x, y);
+
+			// segundo punto
 			cout << "Segundo Punto:" << endl;
 			cout << "ingrese x" << endl;
 			cin >> x;
@@ -71,6 +77,7 @@ int main()
 		}
 		}
 	} while (Op != 0);
+
 	cout << "Fuera!!!\n";
 	return 0;
 }

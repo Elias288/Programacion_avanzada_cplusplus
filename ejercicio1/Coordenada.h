@@ -15,17 +15,19 @@
 
 using namespace std;
 
-class Coordenada{
+class Coordenada
+{
 private:
 	int x, y;
+
 public:
 	Coordenada(int, int);
 	Coordenada();
 	~Coordenada();
 	int getX();
 	int getY();
-	char* toString();
-	void Mover(int,int);
+	char *toString();
+	void Mover(int, int);
 };
 
 #endif /* COORDENADA_H_ */

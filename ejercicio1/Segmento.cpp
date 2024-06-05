@@ -5,26 +5,32 @@
  *      Author: Elias Bianchi
  */
 
+#include <math.h>
 #include "Segmento.h"
 #include "Coordenada.h"
-#include <math.h>
 
-Segmento::Segmento(){
+Segmento::Segmento()
+{
 	this->pri = NULL;
 	this->seg = NULL;
 }
 
-Segmento::Segmento(Coordenada *pri, Coordenada *seg){
+Segmento::Segmento(Coordenada *pri, Coordenada *seg)
+{
 	this->pri = pri;
 	this->seg = seg;
-
 }
 
-int Segmento::Longitud(){
+int Segmento::Longitud()
+{
 	int cat1, cat2, hip, res, x1, x2, y1, y2;
+
+	// first point
 	x1 = this->pri->getX();
-	x2 = this->seg->getX();
 	y1 = this->pri->getY();
+
+	// second point
+	x2 = this->seg->getX();
 	y2 = this->seg->getY();
 
 	cat1 = x1 - x2;
@@ -35,10 +41,10 @@ int Segmento::Longitud(){
 
 	hip = cat1 + cat2;
 	res = sqrt(hip);
+
 	return res;
 }
 
-Segmento::~Segmento() {
-	// TODO Auto-generated destructor stub
+Segmento::~Segmento()
+{
 }
-

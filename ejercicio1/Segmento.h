@@ -10,13 +10,15 @@
 #ifndef SEGMENTO_H_
 #define SEGMENTO_H_
 
-class Segmento {
+class Segmento
+{
 private:
 	Coordenada *pri;
 	Coordenada *seg;
+
 public:
 	Segmento();
-	Segmento(Coordenada*, Coordenada*);
+	Segmento(Coordenada *, Coordenada *);
 	int Longitud();
 	virtual ~Segmento();
 };
