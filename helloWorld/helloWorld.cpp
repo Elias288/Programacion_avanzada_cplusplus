@@ -2,8 +2,10 @@
 #include <string.h>
 #include <iostream>
 
+using namespace std;
+
 int main(int argc, char const *argv[])
 {
-    std::cout << "Hello world!" << std::endl;
+    cout << "Hello World!" << endl;
     return 0;
 }
