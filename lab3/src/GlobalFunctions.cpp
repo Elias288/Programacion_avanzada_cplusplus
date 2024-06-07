@@ -1,7 +1,7 @@
 #include <iostream>
 #include <random>
 
-#include "GlobalFunctions.h"
+#include "..\include\lab3\GlobalFunctions.h"
 
 using namespace std;
 

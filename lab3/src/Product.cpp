@@ -2,8 +2,8 @@
 #include <random>
 #include <iostream>
 
-#include "Product.h"
-#include "GlobalFunctions.h"
+#include "..\include\lab3\Product.h"
+#include "..\include\lab3\GlobalFunctions.h"
 
 using namespace std;
 

@@ -2,16 +2,14 @@
 #include <iostream>
 #include <list>
 
-#include "Product.h"
-#include "Menu.h"
-#include "ProductController.h"
-#include "DtProduct.h"
-#include "MenuController.h"
+#include "..\include\lab3\Product.h"
+#include "..\include\lab3\Menu.h"
+#include "..\include\lab3\ProductController.h"
+#include "..\include\lab3\DtProduct.h"
+#include "..\include\lab3\MenuController.h"
 
 using namespace std;
 
-// Product *product = new Product();
-// Menu *menu = new Menu();
 ProductController *productController = new ProductController();
 MenuController *menuController = new MenuController();
 

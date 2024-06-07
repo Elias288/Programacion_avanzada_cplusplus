@@ -1,5 +1,6 @@
-#include "DtProduct.h"
 #include <iostream>
+
+#include "..\include\lab3\DtProduct.h"
 
 using namespace std;
 

@@ -1,8 +1,8 @@
 #include <iostream>
 #include <list>
 
-#include "ProductController.h"
-#include "Product.h"
+#include "..\include\lab3\ProductController.h"
+#include "..\include\lab3\Product.h"
 
 using namespace std;
 

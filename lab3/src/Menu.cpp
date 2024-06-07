@@ -1,8 +1,8 @@
 #include <iostream>
 #include <list>
 
-#include "GlobalFunctions.h"
-#include "Menu.h"
+#include "..\include\lab3\GlobalFunctions.h"
+#include "..\include\lab3\Menu.h"
 
 using namespace std;
 

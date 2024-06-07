@@ -1,8 +1,8 @@
 #include <iostream>
 #include <list>
 
-#include "MenuController.h"
-#include "Menu.h"
+#include "..\include\lab3\MenuController.h"
+#include "..\include\lab3\Menu.h"
 
 using namespace std;
 
