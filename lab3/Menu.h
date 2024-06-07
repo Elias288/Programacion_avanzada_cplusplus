@@ -1,23 +1,30 @@
 #ifndef MENU_H_
 #define MENU_H_
-#include "Producto.h"
-#include <list>
+
+#include <string>
+
+#include "DtProduct.h"
 
 using namespace std;
 
-class Menu :public Producto{
+class Menu
+{
 private:
-	string codigo;
-	string descripcion;
-	list<Producto*> Productos;
+    string code;
+    string description;
+    list<DtProduct *> products;
+
 public:
-	Menu();
-	Menu(string, string, float);
+    Menu();
+    Menu(string description);
 
-	void add(Producto*);
-	void listarP();
-
-	virtual ~Menu();
+    void add(DtProduct *);
+    void listProducts();
+    void print();
+    float calculatePrice();
+    string getDescription();
+    string getCode();
+    list<DtProduct *> getProducts();
 };
 
 #endif /* MENU_H_ */

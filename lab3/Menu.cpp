@@ -1,28 +1,73 @@
-#include "Menu.h"
-#include <stdio.h>
 #include <iostream>
-#include <stdlib.h>
+#include <list>
+
+#include "GlobalFunctions.h"
+#include "Menu.h"
 
 using namespace std;
 
-Menu::Menu(string cod, string desc, float cant): Producto(cod, desc, cant){
-	this->codigo = cod;
-	this->descripcion = desc;
+Menu::Menu()
+{
+    string random_id = to_string(generateRandomId());
+    this->code = random_id;
+    this->description = "Menu: " + random_id;
 }
 
-void Menu::add(Producto* pro){
-	this->Productos.push_front(pro);
+Menu::Menu(string _description)
+{
+    string random_id = to_string(generateRandomId());
+    this->code = random_id;
+    this->description = _description;
 }
 
-void Menu::listarP(){
-	list<Producto*>::iterator it = this->Productos.begin();
-
-		while (it != this->Productos.end()){
-			cout << "Id=" << (*it)->getcodigo() << ", Descripcion:" << (*it)->getdescripcion() << ", Precio=" << (*it)->getPrecio() << ")\n";
-			it++;
-		}
+void Menu::add(DtProduct *pro)
+{
+    this->products.push_front(pro);
 }
 
-Menu::~Menu() {
+void Menu::listProducts()
+{
+    list<DtProduct *>::iterator dtProduct_it = this->products.begin();
+    while (dtProduct_it != this->products.end())
+    {
+        (*dtProduct_it)->print();
+        dtProduct_it++;
+    }
 }
 
+float Menu::calculatePrice()
+{
+    float totalAmount;
+
+    list<DtProduct *>::iterator dtProduct_it = this->products.begin();
+    while (dtProduct_it != this->products.end())
+    {
+        totalAmount += (*dtProduct_it)->getPrice() * (*dtProduct_it)->getQuantity();
+        dtProduct_it++;
+    }
+
+    return totalAmount;
+}
+
+void Menu::print()
+{
+    cout << "Menu: " << this->getCode() << ", Description: " << this->getDescription() << endl;
+    cout << "Products:" << endl;
+    this->listProducts();
+    cout << "Total amount: $" << this->calculatePrice() << endl;
+}
+
+string Menu::getCode()
+{
+    return this->code;
+}
+
+string Menu::getDescription()
+{
+    return this->description;
+}
+
+list<DtProduct *> Menu::getProducts()
+{
+    return this->products;
+}
