@@ -19,17 +19,14 @@ DtProduct::DtProduct(string description, float price, int _cant) : Product(descr
     this->cant = _cant;
 }
 
-int DtProduct::getQuantity()
+float DtProduct::getQuantity()
 {
     return this->cant;
 }
 
-void DtProduct::print()
+string DtProduct::printDt()
 {
-    cout << "code: " << this->getCode();
-    cout << ", description: " << this->getDescription();
-    cout << ", price: $" << this->getPrice();
-    cout << ", cant: " << this->cant << endl;
+    return this->print() + ", cant: " + to_string(this->cant);
 }
 
 DtProduct::~DtProduct() {}

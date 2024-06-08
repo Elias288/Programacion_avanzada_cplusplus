@@ -15,8 +15,8 @@ public:
 	DtProduct(string, float, int);
 	DtProduct(Product *, int);
 
-	int getQuantity();
-	void print();
+	float getQuantity();
+	string printDt();
 
 	virtual ~DtProduct();
 };

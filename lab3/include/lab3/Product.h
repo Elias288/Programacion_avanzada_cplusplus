@@ -17,10 +17,10 @@ public:
 	Product(Product *product);
 	Product(string description, float price);
 
+	float getPrice();
 	string getCode();
 	string getDescription();
-	float getPrice();
-	void print();
+	string print();
 
 	virtual ~Product();
 };

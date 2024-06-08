@@ -1,6 +1,8 @@
 #include <list>
 #include <random>
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 
 #include "..\include\lab3\Product.h"
 #include "..\include\lab3\GlobalFunctions.h"
@@ -48,9 +50,11 @@ float Product::getPrice()
     return this->price;
 }
 
-void Product::print()
+string Product::print()
 {
-    cout << "code: " << this->code << ", description: " << this->description << ", price: $" << this->price << endl;
+    return "Product: " + this->code +
+           ", description: " + this->description +
+           ", price: $" + floatToString(this->price);
 }
 
 Product::~Product() {}

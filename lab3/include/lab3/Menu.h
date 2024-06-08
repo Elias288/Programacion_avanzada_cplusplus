@@ -19,9 +19,9 @@ public:
     Menu(string description);
 
     void add(DtProduct *);
-    void listProducts();
-    void print();
     float calculatePrice();
+    string listProducts();
+    string print();
     string getDescription();
     string getCode();
     list<DtProduct *> getProducts();

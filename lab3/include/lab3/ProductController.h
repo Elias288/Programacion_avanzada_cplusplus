@@ -15,11 +15,11 @@ private:
 public:
 	ProductController();
 
-	void addProduct(Product *);
 	int getSize();
+	float calculatePrices();
+	void addProduct(Product *);
 	void listProducts();
 	void populate();
-	int calculatePrices();
 	Product *find(string);
 };
 

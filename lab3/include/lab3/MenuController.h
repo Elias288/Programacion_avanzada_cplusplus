@@ -16,6 +16,7 @@ private:
 
 public:
 	MenuController();
+
 	void addMenu(Menu *);
 
 	void listMenus();

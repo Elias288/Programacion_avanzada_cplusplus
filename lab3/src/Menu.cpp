@@ -25,14 +25,18 @@ void Menu::add(DtProduct *pro)
     this->products.push_front(pro);
 }
 
-void Menu::listProducts()
+string Menu::listProducts()
 {
+    string products;
+
     list<DtProduct *>::iterator dtProduct_it = this->products.begin();
     while (dtProduct_it != this->products.end())
     {
-        (*dtProduct_it)->print();
+        products += (*dtProduct_it)->printDt() + "\n";
         dtProduct_it++;
     }
+
+    return products;
 }
 
 float Menu::calculatePrice()
@@ -49,12 +53,13 @@ float Menu::calculatePrice()
     return totalAmount;
 }
 
-void Menu::print()
+string Menu::print()
 {
-    cout << "Menu: " << this->getCode() << ", Description: " << this->getDescription() << endl;
-    cout << "Products:" << endl;
-    this->listProducts();
-    cout << "Total amount: $" << this->calculatePrice() << endl;
+    return "Menu: " + this->getCode() +
+           ", description: " + this->getDescription() + "\n" +
+           "Products: \n" + this->listProducts() +
+           "Total amount: $" + floatToString(this->calculatePrice()) +
+           "\n";
 }
 
 string Menu::getCode()

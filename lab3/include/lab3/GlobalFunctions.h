@@ -4,5 +4,7 @@
 using namespace std;
 
 int generateRandomId();
+float stringToFloat(string number);
+string floatToString(float amount);
 
 #endif /* GENERATE_ID_H_ */
