@@ -17,7 +17,6 @@ MenuController *menuController = new MenuController();
 void test();
 void initialInputMenu();
 void administrativeInputMenu();
-void waiterInputMenu();
 
 void registerProduct();
 void registerMenu();
@@ -68,7 +67,6 @@ void initialInputMenu()
     do
     {
         cout << "1) Administration menu" << endl;
-        cout << "2) Waiter menu" << endl;
         cout << "0) Exit" << endl;
 
         cin >> option;
@@ -80,9 +78,6 @@ void initialInputMenu()
             break;
         case 1:
             administrativeInputMenu();
-            break;
-        case 2:
-            waiterInputMenu();
             break;
 
         default:
@@ -129,14 +124,6 @@ void administrativeInputMenu()
             break;
         }
     } while (option != 0);
-}
-
-/* WAITER MENU */
-void waiterInputMenu()
-{
-    int option;
-
-    cout << "waiter menu" << endl;
 }
 
 /* REGISTER PRODUCT */
