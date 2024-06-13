@@ -39,7 +39,9 @@ int main(int argc, char const *argv[])
         strcpy(command, toLowerCase(ptr)); // copia la primer palabra en command
         ptr = strtok(NULL, " ");
 
-        // Recorre el resto del comando ingresado y lo guarda en argument
+        // Limpia el contenido del argument
+        memset(argument, '\0', INPUT_SIZE);
+        // Recorre el resto del texto ingresado y lo guarda en argument
         while (ptr != NULL)
         {
             strcat(argument, " ");
@@ -68,7 +70,7 @@ int main(int argc, char const *argv[])
         }
 
         TipoRet res = comandos(command, argument, tabla);
-        if (res.message)
+        if (res.message[0] != '\0')
             cout << res.message << endl;
 
     } while (exit != 0);
