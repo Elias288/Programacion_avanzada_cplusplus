@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
     SetConsoleTextAttribute(hConsole = GetStdHandle(STD_OUTPUT_HANDLE), 12);
     cout << AUTOR << "\n\n";
     SetConsoleTextAttribute(hConsole = GetStdHandle(STD_OUTPUT_HANDLE), 5);
-    cout << "AYUDAS - 'ayudas ()'" << "\n\n";
+    cout << "AYUDAS - 'ayudas'" << "\n\n";
     SetConsoleTextAttribute(hConsole = GetStdHandle(STD_OUTPUT_HANDLE), 3);
     cout << "PARA OPTIMO FUNCIONAMIENTO DEL GESTOR RESPETAR ESPACIOS, \nMINUSCULAS Y SEPARADORES DE ARGUMENTOS" << "\n\n";
 
@@ -99,10 +99,19 @@ TipoRet comandos(char *comando, char *argumento, TtablaSQL &tabla)
         resp = dropTable(argumentoSinParentesis, tabla);
 
     /* ADD COLUMN */
+    else if (strcmp(comando, "addcol") == 0)
+        resp = addColumn(argumentoSinParentesis, tabla);
+
     /* DROP CLUMN */
+    else if (strcmp(comando, "dropcol") == 0)
+        resp = dropColumn(argumentoSinParentesis, tabla);
+
     /* INSERT INTO */
     /* DELETE FROM */
     /* PRINT DATA TABLE */
+    else if (strcmp(comando, "printdatatable") == 0)
+        resp = printDataTabla(argumentoSinParentesis, tabla);
+
     /* SELECT WHERE */
     /* SELECT */
     /* JOIN */

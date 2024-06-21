@@ -59,11 +59,11 @@ void ayudas()
     cout << setw(69) << " " << endl;
     cout << "-createtable (NombreTabla)" << setw(43) << " " << endl;
     cout << "-droptable (NombreTabla)" << setw(45) << " " << endl;
-    // cout << "-addcol (NombreTabla, NombreColumna)" << setw(33) << " " << endl;
-    // cout << "-dropcol (NombreTabla, Nombrecolumna)" << setw(32) << " " << endl;
+    cout << "-addcol (NombreTabla, NombreColumna)" << setw(33) << " " << endl;
+    cout << "-dropcol (NombreTabla, Nombrecolumna)" << setw(32) << " " << endl;
     // cout << "-insertinto (NombreTabla,\"valor1\":\"valor2\":\"valor...\")" << setw(15) << " " << endl;
     // cout << "-deletefrom (NombreTabla, NombreColumna=/!/</>/*\"valorn\")" << setw(12) << " " << endl;
-    // cout << "-printdatatable (NombreTabla)" << setw(40) << " " << endl;
+    cout << "-printdatatable (NombreTabla)" << setw(40) << " " << endl;
     // cout << setw(69) << " " << endl;
     // cout << "-selectWhere (NuevaTabla, \"Condicion=/!/</>/*\"valorn\", NombreTabla)" << setw(2) << " " << endl;
     // cout << "-select (NuevaTabla, nombreColumna1:nombreColumna2:..., NombreTabla)" << setw(0) << " " << endl;
@@ -182,4 +182,36 @@ char *toLowerCase(char *string)
         string[i] = tolower(string[i]);
 
     return string;
+}
+
+void obtieneAntesComa(char texto[INPUT_SIZE])
+{
+    int a = 0;
+    while (texto[a] != '\0')
+    {
+        while (texto[a] != ',')
+            a++;
+
+        while (texto[a] != '\0')
+            texto[a] = '\0';
+    }
+    return;
+}
+
+void borrarAntesComa(char texto[INPUT_SIZE])
+{
+    int a = 0;
+    int largoC = strlen(texto);
+    while (texto[0] != ',')
+    {
+        for (int i = 0; i < largoC; i++)
+        {
+            texto[i] = texto[i + 1];
+        }
+        largoC--;
+    }
+    for (int i = a; i < largoC; i++)
+    {
+        texto[i] = texto[i + 1];
+    }
 }

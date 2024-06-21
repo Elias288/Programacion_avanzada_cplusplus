@@ -69,6 +69,10 @@ void insertarTabla(TtablaSQL &tabla, pNodo nuevo);
 void borrarTabla(TtablaSQL &tabla, char *nombre);
 void vaciarColumnas(TtablaSQL &tabla);
 char *toLowerCase(char *string);
+void obtieneAntesComa(char texto[]);
+void borrarAntesComa(char texto[]);
+void printTables(TtablaSQL &tabla);
+void printFila(TtablaSQL &tabla);
 
 TipoRet validarParentesis(char *argumento);
 TipoRet comandos(char *comando, char *argumento, TtablaSQL &tabla);
@@ -78,6 +82,8 @@ TtablaSQL unirArbol(TtablaSQL izq, TtablaSQL der);
 /* FUNCIONES SQL */
 TipoRet createTable(char *nombre, TtablaSQL &tabla);
 TipoRet dropTable(char *nombre, TtablaSQL &tabla);
-void printTables(TtablaSQL &tabla);
+TipoRet addColumn(char *nombre, TtablaSQL &tabla);
+TipoRet dropColumn(char *nombre, TtablaSQL &tabla);
+TipoRet printDataTabla(char *nombre, TtablaSQL &tabla);
 
 #endif
