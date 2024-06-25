@@ -4,5 +4,8 @@
     "list": "cpp",
     "new": "cpp",
     "iostream": "cpp"
-  }
+  },
+  "conventionalCommits.scopes": [
+    "Database"
+  ]
 }

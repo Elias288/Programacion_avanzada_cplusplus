@@ -72,10 +72,18 @@ char *toLowerCase(char *string);
 void obtieneAntesComa(char texto[]);
 void borrarAntesComa(char texto[]);
 void printTables(TtablaSQL &tabla);
-void printFila(TtablaSQL &tabla);
+void printFila(TtablaSQL &tabla, int dato);
+int cantColumnas(TtablaSQL &tabla, char *Ntabla);
+bool comillas(const char *texto);
+void sacacomillas(char *texto);
+void borrarantesPuntos(char texto[]);
+void obtieneantesPuntos(char texto[]);
+void borrarfila(TtablaSQL &BuscaT, int dato);
+
+void chargeData(TtablaSQL &tabla);
 
 TipoRet validarParentesis(char *argumento);
-TipoRet comandos(char *comando, char *argumento, TtablaSQL &tabla);
+TipoRet comandos(char comando[], char argumento[], TtablaSQL &tabla);
 TtablaSQL buscarTabla(TtablaSQL &tabla, char *nombre);
 TtablaSQL unirArbol(TtablaSQL izq, TtablaSQL der);
 
@@ -85,5 +93,7 @@ TipoRet dropTable(char *nombre, TtablaSQL &tabla);
 TipoRet addColumn(char *nombre, TtablaSQL &tabla);
 TipoRet dropColumn(char *nombre, TtablaSQL &tabla);
 TipoRet printDataTabla(char *nombre, TtablaSQL &tabla);
+TipoRet insertInto(char *nombre, TtablaSQL &tabla);
+TipoRet deleteFrom(char *nombre, TtablaSQL &tabla);
 
 #endif

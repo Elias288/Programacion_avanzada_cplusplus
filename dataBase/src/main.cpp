@@ -107,7 +107,13 @@ TipoRet comandos(char *comando, char *argumento, TtablaSQL &tabla)
         resp = dropColumn(argumentoSinParentesis, tabla);
 
     /* INSERT INTO */
+    else if (strcmp(comando, "insertinto") == 0)
+        resp = insertInto(argumentoSinParentesis, tabla);
+
     /* DELETE FROM */
+    else if (strcmp(comando, "deletefrom") == 0)
+        resp = deleteFrom(argumentoSinParentesis, tabla);
+
     /* PRINT DATA TABLE */
     else if (strcmp(comando, "printdatatable") == 0)
         resp = printDataTabla(argumentoSinParentesis, tabla);
