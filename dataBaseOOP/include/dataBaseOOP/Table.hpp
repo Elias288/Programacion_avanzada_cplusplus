@@ -13,7 +13,7 @@ private:
     Table *left;
     Table *right;
 
-public:
+tublic:
     Table(const char *_tableName);
     Table(Table *_table);
 
@@ -21,6 +21,7 @@ public:
     void setLeft(Table *_table);
     void setRight(Table *_table);
     void addNewTable(Table *_table);
+    void recursivePushTable(Table *actualTable, Table *newTable);
     void pushColumn(Column *newColumn);
 
     char *getTableName();

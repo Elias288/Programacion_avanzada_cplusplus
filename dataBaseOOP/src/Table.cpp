@@ -40,10 +40,10 @@ void Table::setRight(Table *_table)
 
 void Table::addNewTable(Table *_table)
 {
-    recursivePushTable(this, _table);
+    this->recursivePushTable(this, _table);
 }
 
-void recursivePushTable(Table *actualTable, Table *newTable)
+void Table::recursivePushTable(Table *actualTable, Table *newTable)
 {
     if (actualTable == NULL)
     {

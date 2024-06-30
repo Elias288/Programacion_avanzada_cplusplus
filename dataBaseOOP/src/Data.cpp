@@ -26,6 +26,11 @@ Data *Data::getNextData()
     return this->nextData;
 }
 
+Data *Data::getForeignKey()
+{
+	return this->foreignKey;
+}
+
 void Data::setNextData(Data *_nextData)
 {
     this->nextData = _nextData;
